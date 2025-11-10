@@ -7,7 +7,7 @@
 
 {% block beforeContent %}
   {{ backLink({
-    href: "#",
+    href: "/start-page",
     text: "Back"
   }) }}
 {% endblock %}
@@ -19,6 +19,7 @@
 
         {{ radios({
           name: "hasSymptoms",
+          value: data.hasSymptoms,
           fieldset: {
             legend: {
               text: "Have you ever displayed symptoms of having magical powers?",
