@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% from 'back-link/macro.njk' import backLink %}
+{% from 'button/macro.njk' import button %}
+{% from 'radios/macro.njk' import radios %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/check-answers-2",
+    text: "Back"
+  }) }}
+{% endblock %}
+{% from 'panel/macro.njk' import panel %}
+{% from "summary-list/macro.njk" import summaryList %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ panel({
+        titleText: "Test kit is on route via Owl",
+        text: "You will recieve the kit in 50-100 days"
+      }) }}
+
+      <h2 class="nhsuk-heading-m">Delivery</h2>
+
+      {% set siteLocationHtml %}
+        Hogwarts School of Witchcraft and Wizardry, Hogwarts Castle, Scottish Highlands, Great Britain.
+      {% endset %}
+
+      {{ summaryList({
+        classes: "nhsuk-summary-list--no-border",
+        rows: [
+          {
+            key: {
+              text: "Sender"
+            },
+            value: {
+              html: siteLocationHtml
+            }
+          },
+          {
+            key: {
+              text: "Date and time"
+            },
+            value: {
+              text: "Thursday 15 June at 9:10am"
+            }
+          }
+        ]
+      }) }}
+
+      <p>
+        <a href="#">Tell us about your experience using this service</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

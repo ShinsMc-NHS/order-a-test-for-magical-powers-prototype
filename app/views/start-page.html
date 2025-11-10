@@ -34,28 +34,26 @@
         <li>can fly</li>
         <li>can disappear at will</li>
         <li>possess any other weird abilities</li>
+        <li>know your hogwarts house</li>
       </ul>
 
 {% from 'details/macro.njk' import details %}
 
 {% call details({
-  summaryText: "How to find your NHS number"
+  summaryText: "How to find your Hogwarts house"
 }) %}
-  <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-  <p>You can find your NHS number by logging in to a GP online service or on any document the NHS has sent you, such as your:</p>
+  <p>A House is chosen for you when you are admitted to Hogwarts.</p>
+  <p>Your house should be the following:</p>
   <ul>
-    <li>prescriptions</li>
-    <li>test results</li>
-    <li>hospital referral letters</li>
-    <li>appointment letters</li>
+    <li>Gryffindor</li>
+    <li>Slytherin</li>
+    <li>Hufflepuff</li>
+    <li>Ravenclaw</li>
   </ul>
-  <p>Ask your GP surgery for help if you can't find your NHS number.</p>
+
 {% endcall %}
 
-      <h2>Before you start</h2>
-
-      <p>We'll ask you for: ...</p>
-
+      
       {{ button({
         text: "Start now",
         href: "/magical-powers"
