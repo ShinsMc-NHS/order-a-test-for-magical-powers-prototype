@@ -18,7 +18,7 @@ router.post("/magical-powers-answer", (req, res) => {
     res.redirect("/ineligible");
   } else {
     // Send user back to the question page
-    res.redirect("/ineligible");
+    res.redirect("/not-telling");
   }
 });
 
