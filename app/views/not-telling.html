@@ -15,7 +15,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/sending" method="post" novalidate>
+      <form action="/check-answers-2" method="post" novalidate>
 {% from 'textarea/macro.njk' import textarea %}
 
 {{ textarea({
@@ -23,12 +23,12 @@
   value: data.description,
   id: "description",
   label: {
-    text: "Please describe your magical powers",
+    text: "WHY??? ",
     classes: "nhsuk-label--l",
     isPageHeading: "true"
   },
   hint: {
-    text: "Ability to speak to animals, teleportation or able to see through walls"
+    text: "Please tell us we are so curious"
   }
 }) }}
 

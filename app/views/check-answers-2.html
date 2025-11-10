@@ -7,7 +7,7 @@
 
 {% block beforeContent %}
   {{ backLink({
-    href: "/symptoms",
+    href: "/sending",
     text: "Back"
   }) }}
 {% endblock %}
@@ -25,6 +25,14 @@
       <h2 class="nhsuk-heading-m">
         Personal details
       </h2>
+
+{% set sendingHtml %}
+  <ul>
+  {% for sending in data.sending %}
+    <li>{{ sending }}</li>
+    {% endfor %}
+  </ul>
+{% endset %}
 
       {{ summaryList({
         rows: [
@@ -58,6 +66,23 @@
                   href: "/symptoms",
                   text: "Change",
                   visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "How would you like the kit to be sent?"
+            },
+            value: {
+              html: sendingHtml
+            },
+            actions: {
+              items: [
+                {
+                  href: "/sending",
+                  text: "Change",
+                  visuallyHiddenText: "NHS number"
                 }
               ]
             }

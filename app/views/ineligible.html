@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% from 'back-link/macro.njk' import backLink %}
+{% from 'button/macro.njk' import button %}
+{% from 'radios/macro.njk' import radios %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/magical-powers",
+    text: "Back"
+  }) }}
+{% endblock %}
+{% from 'panel/macro.njk' import panel %}
+{% from "summary-list/macro.njk" import summaryList %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      {{ panel({
+        titleText: "You are not eligible for a test kit",
+        text: "sorry...."
+      }) }}
+
+      <p>
+        <a href="#">Tell us about your experience using this service</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

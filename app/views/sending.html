@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% from 'back-link/macro.njk' import backLink %}
+{% from 'button/macro.njk' import button %}
+{% from 'radios/macro.njk' import radios %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/symptoms",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+      <form action="/check-answers-2" method="post" novalidate>
+{% from 'checkboxes/macro.njk' import checkboxes %}
+
+{{ checkboxes({
+  idPrefix: "sending",
+  name: "sending",
+          value: data.sending,
+  fieldset: {
+    legend: {
+      text: "How would you like your test kit to be sent out?",
+      classes: "nhsuk-fieldset__legend--l",
+      isPageHeading: true
+    }
+  },
+  hint: {
+    text: "Select all options that are relevant to you"
+  },
+  items: [
+    {
+      value: "Owl",
+      text: "Owl"
+    },
+    {
+      value: "Knight Bus",
+      text: "Knight Bus"
+    },
+    {
+      value: "Floo Powder",
+      text: "Floo Powder"
+    },
+    {
+      value: "Broomstick",
+      text: "Broomstick"
+    }
+  ]
+}) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

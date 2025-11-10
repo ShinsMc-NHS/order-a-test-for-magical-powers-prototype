@@ -19,7 +19,7 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       {{ panel({
-        titleText: "Test kit is on route via Owl",
+        titleText: "Test kit is on route",
         text: "You will recieve the kit in 50-100 days"
       }) }}
 
@@ -51,6 +51,49 @@
         ]
       }) }}
 
+
+      {% from 'images/macro.njk' import image %}
+
+{% if "Owl" in data.sending %}
+
+  {{ image({
+    src: "/images/owl.jpg",
+    sizes: "(max-width: 768px) 100vw, 66vw",
+    srcset: "/images/owl.jpg 600w, /images/owl.jpg 1000w",
+    alt: "Owl delivering post.",
+    caption: "Owl delivering post."
+  }) }}
+
+  {% elseif "Broomstick" in data.sending %}
+
+{{ image({
+  src: "/images/broom.jpg",
+  sizes: "(max-width: 768px) 100vw, 66vw",
+  srcset: "/images/broom.jpg 600w, /images/broom.jpg 1000w",
+  alt: "Broom delivering post.",
+  caption: "Broom delivering post."
+}) }}
+
+{% elseif "Floo Powder" in data.sending %}
+
+{{ image({
+  src: "/images/floo.jpg",
+  sizes: "(max-width: 768px) 100vw, 66vw",
+  srcset: "/images/floo.jpg 600w, /images/floo.jpg 1000w",
+  alt: "Floo delivering post.",
+  caption: "Floo delivering post."
+}) }}
+
+{% elseif "Knight Bus" in data.sending %}
+
+{{ image({
+  src: "/images/bus.jpg",
+  sizes: "(max-width: 768px) 100vw, 66vw",
+  srcset: "/images/bus.jpg 600w, /images/bus.jpg 1000w",
+  alt: "Bus delivering post.",
+  caption: "Bus delivering post."
+}) }}
+{% endif %}
       <p>
         <a href="#">Tell us about your experience using this service</a>
       </p>
